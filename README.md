@@ -63,7 +63,7 @@ for char in message:
 ``` python
 tree.decode_bt(".... . .-.. .-.. --- / .-- --- .-. .-.. -.. -.-.--")
 ```
-![HEAP DECODING]()
+![HEAP DECODING](https://github.com/cameronpovey/BinaryHeaps/blob/main/images/heap_decoding.png?raw=true)
 
 ### HAM Encoding
 Encoding HAM signals took `sender: str`, `reciever: str` and a `message: str` arguments to return a morse code encoded string. This was done by using a previous encode function and parsing the required message: `reciever+"de"+sender+"message+"=("`.
@@ -72,7 +72,7 @@ Encoding HAM signals took `sender: str`, `reciever: str` and a `message: str` ar
 ``` python
 encode_ham("s1","r2","hello world")
 ```
-![HAM ENCODING]()
+![HAM ENCODING](https://github.com/cameronpovey/BinaryHeaps/blob/main/images/ham_encoding.png?raw=true)
 
 ### HAM Decoding
 When recieving the message we have to decode the HAM signal. Within this function that can be done, `decode_ham(msg:str) -> (str, str, str)`. To start off I used the previous `decode_bt` function converting the morse code to standard characters. From here I split where 'DE' was found. However, this prodives a few issues where if for example the send/recieve variables contain a 'DE'. Which is one of the limitations of this system, explorded in [Testing](#testing). `decoded=decoded.split("DE",1)`. Here the different sections of the message were popped and returned.
@@ -81,7 +81,7 @@ When recieving the message we have to decode the HAM signal. Within this functio
 ``` python
 decode_ham(".-. ..--- -.. . ... .---- -...- .... . .-.. .-.. --- / .-- --- .-. .-.. -.. -...- -.--.")
 ```
-![HAM DECODING]()
+![HAM DECODING](https://github.com/cameronpovey/BinaryHeaps/blob/main/images/ham_decoding.png?raw=true)
 
 ### Packets Echo
 To send a packet and recieve a packet back with the same message we use the echo function, `async def send_echo(sender: str, msg: str) -> str:`, within this function we estabish a connection and fetch the `client_id`. With this we create dictionary (json) with the nessacary information which gets sent to the provided uri. using `json.dumps(outgoing)`.
@@ -91,7 +91,7 @@ After sending the packet we can recieve the packet from the websocket and return
 ``` python
 asyncio.run(send_echo("c2", "testing"))
 ```
-![ECHO]()
+![ECHO](https://github.com/cameronpovey/BinaryHeaps/blob/main/images/ECHO.png?raw=true)
 
 ### Packets Time
 Using a similar method to the [echo function](#packets-echo), `async def send_time(s: str) -> str:` we can send the message `time` to the server to recieve the time. These two functions follow the same process but have different arguments and however this one will just return the time.
@@ -100,7 +100,7 @@ Using a similar method to the [echo function](#packets-echo), `async def send_ti
 ``` python
 asyncio.run(send_time("c2"))
 ```
-![ECHO]()
+![ECHO](https://github.com/cameronpovey/BinaryHeaps/blob/main/images/time.png?raw=true)
 
 # How to run
 This git comes with two files, a test file and the main morse.py where the morse code takes place. This codes only requirements is a valid version of python, preferably python 3.

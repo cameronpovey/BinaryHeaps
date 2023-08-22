@@ -2,7 +2,7 @@
 
 ### Worksheets
 * [Worksheet 2 - Part 1 Link](https://github.com/cameronpovey/MorseCodeDecoder)
-* [Worksheet 3 Link]() <!--NOT LINKED YET-->
+* [Worksheet 3 Link](https://github.com/cameronpovey/UDP_Packets.git)
 
 ### Index
 * [Development](#development-1)
